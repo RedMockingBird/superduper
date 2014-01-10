@@ -1,7 +1,11 @@
 <div class="jumbotron">
 	<h1>Welcome to Super Duper <br><small>A project by Jayden</small></br></h1>
-	<br><p>
-		<%= link_to "Sign up to Super Duper", "#", class: "btn btn-primary btn-lg" %>
-		<%= link_to "Log in", "#", class: "btn btn-default btn-lg" %>
-	</br></p>
+	<% if user_signed_in? %>
+		Thanks for signing up!
+	<% else %>	
+		<br><p>
+			<%= link_to "Sign up to Super Duper", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+			<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+		</br></p>
+	<% end %>
 </div>
